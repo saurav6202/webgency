@@ -34,7 +34,7 @@
     .hero {
         flex-direction: column;
         text-align: center;
-        height: 100vh;
+        height: 90vh;
         padding-top: 5rem;
         padding-bottom: 3rem;
         min-height: auto;
