@@ -34,8 +34,7 @@
     .hero {
         flex-direction: column;
         text-align: center;
-        /* justify-content: center; */
-        height: 75vh;
+        height: 100vh;
         padding-top: 5rem;
         padding-bottom: 3rem;
         min-height: auto;
@@ -120,7 +119,7 @@
         transform: translateX(-50%);
         z-index: 10;
         margin-top: 0;
-        width: 28rem;
+        width: 25rem;
     }
     .section-title h2 {
         font-size: 1.8rem;
