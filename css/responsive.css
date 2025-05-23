@@ -102,6 +102,7 @@
         width: 10rem;
         display: block;
         margin: 0 auto;
+        z-index: 100;
     }
 
     .hero .hero-buttons .d:hover {
@@ -119,7 +120,7 @@
         transform: translateX(-50%);
         z-index: 10;
         margin-top: 0;
-        width: 25rem;
+        width: 20rem;
     }
     .section-title h2 {
         font-size: 1.8rem;
