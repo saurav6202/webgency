@@ -154,7 +154,7 @@ nav {
     color: var(--dark);
     font-weight: 500;
     padding: 0.5rem 0;
-    border-bottom: 1px solid var(--gray);
+    /* border-bottom: 1px solid var(--gray); */
 }
 
 /* Hero Section */
@@ -264,6 +264,7 @@ h1 span {
     max-width: 700px;
     z-index: 1;
     opacity: 0.8;
+    width: 35rem;
 }
 .hero-image-float{
     animation: float 6s ease-in-out infinite;
