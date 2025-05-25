@@ -36,15 +36,20 @@ button.addEventListener("mouseleave", () => {
 // logo
 const h1 = document.querySelector(".hero .hero-content .logo");
 let spans = "";
-const array = h1.textContent.split("");
-array.forEach((ele, idx) => {
-  if (idx < (array.length / 2)) {
-    spans += `<span class="a">${ele}</span>`;
-  } else {
-    spans += `<span class="b">${ele}</span>`;
-  }
-  if (idx >= 5) {
-    spans += `<span class="b" style="color: var(--secondary);>${ele}</span>`;
-  }
-});
-h1.innerHTML = spans;
+if (h1) {
+
+  const array = h1.textContent.split("");
+  array.forEach((ele, idx) => {
+    if (idx < (array.length / 2)) {
+      spans += `<span class="a">${ele}</span>`;
+    } else {
+      spans += `<span class="b">${ele}</span>`;
+    }
+    if (idx >= 5) {
+      spans += `<span class="b" style="color: var(--secondary);>${ele}</span>`;
+    }
+  });
+  h1.innerHTML = spans;
+}
+
+
