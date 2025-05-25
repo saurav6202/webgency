@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .body{
+            background: linear-gradient(135deg, #7d6cfb, #4235a1);
+            padding: 5rem 0;
+            height: 100%;
+            width: 100vw;
+        }
+        .quote-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.107);
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .cta-button {
+            width: 100%;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        .fa-bars {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .quote-container {
+                margin: 20px;
+                padding: 15px;
+                border-radius: 6px;
+            }
+
+            .modal-content {
+                width: 90%;
+                margin: 30% auto;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea,
+            select {
+                font-size: 15px;
+                padding: 8px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .fa-bars {
+                display: inline;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 20px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea,
+            select {
+                font-size: 14px;
+            }
+
+            .cta-button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .modal-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <!-- <div class="logo">Webgen<span>cy</span></div> -->
+         <a href="index.html"><img src="images/logo2.png" alt="webgency logo"></a>
+    </nav>
+    <div class="body">
+        <div class="quote-container" id="quoteForm">
+            <h2>Request a Free Quote</h2>
+            <form id="quoteRequestForm">
+                <div class="form-group">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Needed <span class="required">*</span></label>
+                    <select id="service" name="service" required>
+                        <option value="website Development">Website Development</option>
+                        <option value="ecommerce">E-commerce Website</option>
+                        <option value="Website redesign">Website Redesign</option>
+                        <option value="seo Services">SEO Services</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Project Budget <span class="required">*</span></label>
+                    <select id="budget" name="budget" required>
+                        <option value="₹1,500 - ₹2,000">₹1,500 - ₹2,000 – Perfect for personal portfolios and simple
+                            websites.</option>
+                        <option value="₹2,500" selected>₹2,500 – Ideal for small business websites with custom
+                            features.
+                        </option>
+                        <option value="₹3,000">₹3,000 – Best suited for full-fledged e-commerce platforms.</option>
+                        <option value="₹4,000+">₹4,000+ – Tailored solutions for complex or large-scale projects.
+                        </option>
+                        <option value="unsure">Not sure</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Project Details <span class="required">*</span></label>
+                    <textarea id="message" name="message" required
+                        placeholder="Please describe your project, including any specific requirements or features you need..."></textarea>
+                </div>
+
+                <button type="submit" class="cta-button submitBtn">Submit Quote Request</button>
+            </form>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Thank You!</h3>
+                <p>Your quote request has been submitted successfully.</p>
+                <p>We'll get back to you within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      // Initialize EmailJS
+        emailjs.init("tdsoyh0OdhhLalS5q");
+
+        document.getElementById("quoteRequestForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            emailjs.sendForm('service_b8tqxgf', 'template_g614hul', this)
+                .then(function () {
+                    document.getElementById('successModal').style.display = 'block';
+                    document.getElementById('quoteRequestForm').reset();
+                }, function (error) {
+                    alert('Oops... ' + JSON.stringify(error));
+                });
+        });
+
+
+
+        // Form submission handler
+
+
+        function closeModal() {
+            document.getElementById('successModal').style.display = 'none';
+            window.location.href = "index.html";
+        }
+
+        function openQuoteForm() {
+            document.getElementById('quoteForm').style.display = 'block';
+        }
+
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('successModal')) {
+                closeModal();
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
