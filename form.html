@@ -7,8 +7,8 @@
     <title>Webgency | Modern Web Development Agency | Quest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" type="x-icon" href="images/logo3.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -85,22 +85,16 @@
         .card input[type="radio"] {
             margin-right: 10px;
         }
-
-        .pricing-card {
-            text-align: center;
+        .pricing{
+            line-height: 1rem;
+            padding-left: 1rem;
         }
-
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin: 15px 0;
+        .pricing span{
+            font-weight: 600;
         }
-
-        .price span {
-            font-size: 16px;
-            font-weight: normal;
-            color: #7f8c8d;
+        .pricing p{
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         .form-group {
@@ -220,38 +214,26 @@
                     <div class="cards-container">
                         <!-- Service Option 1 -->
                         <label class="card">
-                            <input type="radio" name="service" value="web-development">
-                            <h3>Website Development</h3>
-                            <p>Bring your ideas to life with custom websites — from sleek landing pages to powerful web
-                                applications.</p>
-                            <p class="highlight">Includes: Mobile-responsive design, SEO optimization, and CMS (Content
-                                Management System) integration for easy content updates.</p>
+                            <input type="radio" name="service" value="Portfolio">
+                            <h3>Portfolio webiste</h3>
                         </label>
 
                         <!-- Service Option 2 -->
                         <label class="card">
                             <input type="radio" name="service" value="Business Website">
                             <h3>Business Website</h3>
-                            <p>Professional website development to establish your brand’s online presence and attract
-                                customers.</p>
-                            <p class="highlight">Includes: Custom layout design, contact forms, service pages, Google
-                                Maps integration, and mobile responsiveness.</p>
                         </label>
 
                         <!-- Service Option 3 -->
                         <label class="card">
-                            <input type="radio" name="service" value="graphic-design">
-                            <h3>Graphic Design</h3>
-                            <p>Stand out with professional branding, eye-catching logos, and impactful marketing
-                                materials that reflect your brand identity.</p>
-                            <p class="highlight">Includes: Multiple logo variants, brand guidelines, and editable source
-                                files for future use.</p>
+                            <input type="radio" name="service" value="E-commerce">
+                            <h3>E-commerce website</h3>
                         </label>
 
                         <!-- Service Option 4 -->
                         <label class="card">
                             <input type="radio" name="service" value="seo">
-                            <h3>SEO & Digital Marketing</h3>
+                            <h3>SEO optimization</h3>
                             <p>Boost your online presence, drive targeted traffic, and grow your customer base with
                                 smart digital strategies. </p>
                             <p class="highlight">Includes: In-depth keyword research, content strategy planning, and
@@ -259,54 +241,11 @@
                         </label>
                     </div>
                 </div>
-
-                <div class="pricing-section">
-                    <h2>Choose Your Pricing Option</h2>
-                    <div class="cards-container">
-                        <!-- Pricing Option 1 -->
-                        <label class="card pricing-card">
-                            <input type="radio" name="budget" value="basic">
-                            <h3>Basic Package</h3>
-                            <p>Ideal for small projects and startups needing a simple yet effective online presence.</p>
-                            <div class="price">₹2,799 <span>/project</span></div>
-                            <ul style="text-align: left; padding-left: 20px;">
-                                <li>Up to 5 custom-designed pages</li>
-                                <li>Clean and functional design</li>
-                                <li>1 round of revisions</li>
-                            </ul>
-                        </label>
-
-                        <!-- Pricing Option 2 -->
-                        <label class="card pricing-card">
-                            <input type="radio" name="budget" value="standard">
-                            <h3>Standard Package</h3>
-                            <p>Our most popular choice — perfect for growing businesses ready to make an impact online.
-                            </p>
-                            <div class="price">₹3,999 <span>/project</span></div>
-                            <ul style="text-align: left; padding-left: 20px;">
-                                <li>Up to 10 custom-designed pages</li>
-                                <li> Unique and modern design tailored to your brand</li>
-                                <li>3 rounds of revisions</li>
-                                <li>Basic SEO setup for better visibility</li>
-                            </ul>
-                        </label>
-
-                        <!-- Pricing Option 3 -->
-                        <label class="card pricing-card">
-                            <input type="radio" name="budget" value="premium">
-                            <h3>Premium Package</h3>
-                            <p>A complete solution crafted for large-scale or feature-rich projects that demand
-                                excellence.</p>
-                            <div class="price">₹5,999 <span>/project</span></div>
-                            <ul style="text-align: left; padding-left: 20px;">
-                                <li>Unlimited pages with advanced custom design</li>
-                                <li>5 rounds of revisions for pixel-perfect results</li>
-                                <li>Full SEO optimization for maximum reach</li>
-                                <li>6 months of priority support</li>
-                            </ul>
-                        </label>
-                    </div>
+                <div class="pricing">
+                    <p>Website Design Starting at ₹2,499</p>
+                    <span>Fill the form below and we'll send you a personaliz quote!</span>
                 </div>
+                
 
                 <div class="contact-form">
                     <h2>Tell Us About Your Project</h2>
@@ -373,33 +312,6 @@
             });
         });
 
-        // Form submission handling
-        // document.getElementById('questForm').addEventListener('submit', function (e) {
-        //     e.preventDefault();
-
-        //     // Validate that a service is selected
-        //     const selectedService = document.querySelector('input[name="service"]:checked');
-        //     if (!selectedService) {
-        //         alert('Please select a service');
-        //         return;
-        //     }
-
-        //     // Validate that a pricing option is selected
-        //     const selectedPricing = document.querySelector('input[name="pricing"]:checked');
-        //     if (!selectedPricing) {
-        //         alert('Please select a pricing option');
-        //         return;
-        //     }
-
-        //     // Here you would typically send the form data to your server
-        //     alert('Thank you for your submission! We will contact you soon.');
-        //     this.reset();
-
-        //     // Reset card selections
-        //     document.querySelectorAll('.card').forEach(card => {
-        //         card.classList.remove('selected');
-        //     });
-        // });
     </script>
 
     <script>
