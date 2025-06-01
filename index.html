@@ -7,11 +7,12 @@
     <title>Webgency | Modern Web Development Agency</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" type="x-icon" href="images/logo3.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
 <body>
+
     <!-- Navigation -->
     <nav>
         <!-- <div class="logo">Webgen<span>cy</span></div> -->
@@ -23,7 +24,7 @@
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="form.html" class="cta-button" id="animated-button" >Get a Quote</a>
+        <a href="./form.html" class="cta-button" id="animated-button">Get a Quote</a>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i class="fas fa-bars"></i>
         </button>
@@ -37,8 +38,9 @@
                 <a href="#portfolio">Portfolio</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#contact">Contact</a>
-                <button class="cta-button" style="width: 100%; margin-top: 1rem;"><a style="color: white;"
-                        href="form.html">Get a Quote</a></button>
+                <button class="cta-button animated-button" id="animated-button"
+                    style="width: 100%; margin-top: 1rem;"><a style="color: white;" href="./form.html">Get a
+                        Quote</a></button>
             </div>
         </div>
 
@@ -50,9 +52,19 @@
                 <p>Webgency builds fast, reliable, and beautifully crafted websites that help your business grow and
                     stand out online.</p>
                 <div class="hero-buttons">
-                    <a class="cta-button d e" href="#portfolio">Our Work</a>
-                    <a class="secondary-button d e">Learn More</a>
-                    <a class="secondary-button d" href="form.html">Get a Website</a>
+                    <a class="cta-button btn magnetic d" id="animated-button" href="./form.html"
+                        style="border: 2px solid var(--primary);">
+                        Get a website
+                        <div class="particles-field" id="particleField"></div>
+                    </a>
+                    <a class="cta-button btn magnetic e d" href="#services">
+                        Learn More
+                        <div class="particles-field" id="particleField"></div>
+                    </a>
+                    <a class="cta-button magnetic e d" href="#portfolio">
+                        Our Work
+                        <div class="particles-field" id="particleField"></div>
+                    </a>
                 </div>
             </div>
             <img class="hero-image" src="images/logo3.png" alt="Web Design Illustration" class="hero-image">
@@ -140,8 +152,8 @@
                     <div class="portfolio-overlay">
                         <h3>Luxury Fashion Store</h3>
                         <p>A high-end e-commerce platform with custom product configurator</p>
-                        <button class="secondary-button" style="color: white; border-color: white;">View
-                            Project</button>
+                        <a class="projectBtn liquid">View Project</a>
+
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -150,8 +162,8 @@
                     <div class="portfolio-overlay">
                         <h3>Tech Startup Dashboard</h3>
                         <p>Data visualization and analytics platform for SaaS company</p>
-                        <button class="secondary-button" style="color: white; border-color: white;">View
-                            Project</button>
+                        <a class="projectBtn liquid">View Project</a>
+
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -160,8 +172,7 @@
                     <div class="portfolio-overlay">
                         <h3>Restaurant Booking System</h3>
                         <p>Online reservation and table management with real-time updates</p>
-                        <button class="secondary-button" style="color: white; border-color: white;">View
-                            Project</button>
+                        <a class="projectBtn liquid">View Project</a>
                     </div>
                 </div>
             </div>
@@ -347,6 +358,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
     <script src="gsap.js"></script>
+    <script>
+        const particleField = document.querySelectorAll(".particles-field");
+        particleField.forEach(field => {
+
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.setProperty('--x', `${Math.random() * 200 - 100}px`);
+                particle.style.setProperty('--y', `${Math.random() * 200 - 100}px`);
+                particle.style.animation = `particleFloat ${1 + Math.random() * 2}s infinite`;
+                particle.style.left = `${Math.random() * 90}%`;
+                particle.style.top = `${Math.random() * 70}%`;
+                field.appendChild(particle);
+            }
+        })
+    </script>
 </body>
 
 </html>
