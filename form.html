@@ -85,14 +85,17 @@
         .card input[type="radio"] {
             margin-right: 10px;
         }
-        .pricing{
+
+        .pricing {
             line-height: 1rem;
             padding-left: 1rem;
         }
-        .pricing span{
+
+        .pricing span {
             font-weight: 600;
         }
-        .pricing p{
+
+        .pricing p {
             font-size: 0.8rem;
             font-weight: 500;
         }
@@ -174,6 +177,85 @@
             border-radius: 5px;
             text-align: center;
         }
+
+        .submitButton {
+            /* width: 150px;
+                height: 50px; */
+            background: none;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 100ms;
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            border: none;
+            color: white;
+        }
+
+        .submitButton span {
+            color: white;
+            font-weight: 500;
+        }
+
+        .submitButton svg {
+            position: absolute;
+            color: green;
+            fill: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .submitButtonAnimate {
+            outline: none;
+            border: 4px solid #cbc5fb;
+            border-left: 4px solid #6c5ce7;
+            width: 3rem;
+            height: 3rem;
+            animation: spin 2s 500ms forwards;
+            background: white;
+        }
+
+        .submitButtonAnimate span {
+            color: transparent;
+
+        }
+
+        .submitButtonAnimate svg {
+            animation: check 500ms 2300ms forwards;
+        }
+
+        @keyframes spin {
+            80% {
+                background: white;
+                border: 4px solid #cbc5fb;
+                border-left: 4px solid #6c5ce7;
+            }
+
+            100% {
+                transform: rotate(1080deg);
+                border: 4px solid #6c5ce7;
+                background: white;
+
+            }
+        }
+
+        @keyframes check {
+            to {
+                fill: #17b978;
+
+            }
+        }
+
+        @keyframes circle {
+            to {
+                border: 4px solid #6c5ce7;
+                color: blue;
+                background: white;
+
+            }
+        }
     </style>
 </head>
 
@@ -245,7 +327,7 @@
                     <p>Website Design Starting at ₹2,499</p>
                     <span>Fill the form below and we'll send you a personaliz quote!</span>
                 </div>
-                
+
 
                 <div class="contact-form">
                     <h2>Tell Us About Your Project</h2>
@@ -280,7 +362,15 @@
                             placeholder="Your estimated budget range (if any)">
                     </div>
 
-                    <button class="cta-button" type="submit">Submit Your Quest</button>
+                    <button class="cta-button submitButton" type="submit">
+                        <span>Submit Your Quest</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" />
+                        </svg>
+                    </button>
+
+
             </form>
         </div>
     </div>
@@ -319,32 +409,32 @@
         // Initialize EmailJS
         emailjs.init("tdsoyh0OdhhLalS5q");
 
+        
         document.getElementById("questForm").addEventListener("submit", function (e) {
             e.preventDefault();
 
             emailjs.sendForm('service_b8tqxgf', 'template_g614hul', this)
-                .then(function () {
-                    document.getElementById('successModal').style.display = 'block';
-                    document.getElementById('quoteRequestForm').reset();
+            .then(function () {
+                document.querySelector(".submitButton").classList.add("submitButtonAnimate");
+                document.getElementById('questForm').reset();
+                setTimeout(() => {
+                        document.querySelector(".submitButton").classList.remove("submitButtonAnimate");
+                        closeModal();
+                    }, 4000);
                 }, function (error) {
                     alert('Oops... ' + JSON.stringify(error));
                 });
         });
         // Form submission handler
         function closeModal() {
-            document.getElementById('successModal').style.display = 'none';
             window.location.href = "index.html";
         }
 
-        function openQuoteForm() {
-            document.getElementById('quoteForm').style.display = 'block';
-        }
-
-        window.onclick = function (event) {
-            if (event.target == document.getElementById('successModal')) {
-                closeModal();
-            }
-        }
+        // window.onclick = function (event) {
+        //     if (event.target == document.getElementById('successModal')) {
+        //         closeModal();
+        //     }
+        // }
 
 
     </script>
