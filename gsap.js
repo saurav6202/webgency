@@ -41,7 +41,7 @@ ScrollTrigger.matchMedia({
             stagger: 0.1,
         })
         gsap.from(".hero .hero-buttons .d", {
-            y: 20,
+            y: 30,
             opacity: 0,
             duration: 0.8,
             delay: 0.8,
@@ -141,7 +141,7 @@ gsap.from(".contact-icon i", {
     opacity: 0,
     x: -50,
     stagger: 0.1,
-    duration: 1,
+    duration: 0.5,
     ease: "power2.out",
     scrollTrigger: {
         trigger: ".contact-text h3",
